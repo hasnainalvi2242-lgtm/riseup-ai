@@ -1,19 +1,41 @@
-<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RiseUp AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <style>
-body { 
-  background: linear-gradient(135deg, #6a11cb, #2575fc); 
-  color: #fff; 
-}
-header { 
-  display:flex; flex-direction:column; justify-content:center; align-items:center; 
-  height:100vh; text-align:center; padding:0 20px; 
-}
-header h1 { font-size:3rem; margin-bottom:15px; }
-header p { font-size:1.3rem; opacity:0.9; max-width:600px; }
-.btn { margin-top:30px; padding:12px 25px; background:#ff4b2b; color:#fff; border-radius:30px; font-weight:bold; transition:0.3s; }
-.btn:hover { background:#ff6a4d; }
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; scroll-behavior:smooth; }
+body { background: linear-gradient(135deg, #6a11cb, #2575fc); color:#fff; }
+a { text-decoration:none; }
+header { display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; text-align:center; padding:0 20px; animation: fadeIn 1.5s; }
+header h1 { font-size:3rem; margin-bottom:15px; animation: fadeIn 2s; }
+header p { font-size:1.3rem; opacity:0.9; max-width:600px; animation: fadeIn 2.5s; }
+.btn { margin-top:30px; padding:12px 25px; background:#ff4b2b; color:#fff; border-radius:30px; font-weight:bold; transition:0.3s; animation: fadeIn 3s; }
+.btn:hover { background:#ff6a4d; transform: translateY(-3px); }
 section { padding:80px 20px; max-width:1000px; margin:0 auto; text-align:center; }
-.feature-box { background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; flex:1 1 250px; margin:10px; transition:0.3s; }
-.feature-box:hover { background:rgba(255,255,255,0.2); }
+section h2 { font-size:2rem; margin-bottom:20px; }
+section p { font-size:1.1rem; opacity:0.85; line-height:1.6; margin-bottom:20px; }
+.features { display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:40px; }
+.feature-box { background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; flex:1 1 250px; margin:10px; transition:0.3s; opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+.feature-box:nth-child(1){ animation-delay:0.3s; }
+.feature-box:nth-child(2){ animation-delay:0.6s; }
+.feature-box:nth-child(3){ animation-delay:0.9s; }
+.feature-box:hover { background:rgba(255,255,255,0.2); transform: translateY(-5px); }
 footer { text-align:center; padding:40px 20px; opacity:0.8; font-size:0.9rem; }
+/* Animations */
+@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+@keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
+@media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1.1rem;} section h2{font-size:1.6rem;} }
 </style>
+</head>
+<body>
+
+<header>
+  <h1>🌟 Welcome to RiseUp AI 🌟</h1>
+  <p>Your journey to emotional healing and personal growth starts here. Step by step, every day.</p>
+  <a href="#features" class="btn">Explore More</a>
+</header>
+
+<secti
