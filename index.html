@@ -5,37 +5,142 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RiseUp AI</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif; scroll-behavior:smooth; }
-body { background: linear-gradient(135deg, #6a11cb, #2575fc); color:#fff; }
-a { text-decoration:none; }
-header { display:flex; flex-direction:column; justify-content:center; align-items:center; height:100vh; text-align:center; padding:0 20px; animation: fadeIn 1.5s; }
+body { color:#fff; }
+/* Hero Section with Background Image */
+header {
+  display:flex; flex-direction:column; justify-content:center; align-items:center; 
+  height:100vh; text-align:center; padding:0 20px; 
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1650&q=80') no-repeat center center/cover;
+}
 header h1 { font-size:3rem; margin-bottom:15px; animation: fadeIn 2s; }
 header p { font-size:1.3rem; opacity:0.9; max-width:600px; animation: fadeIn 2.5s; }
 .btn { margin-top:30px; padding:12px 25px; background:#ff4b2b; color:#fff; border-radius:30px; font-weight:bold; transition:0.3s; animation: fadeIn 3s; }
 .btn:hover { background:#ff6a4d; transform: translateY(-3px); }
+
+/* Sections */
 section { padding:80px 20px; max-width:1000px; margin:0 auto; text-align:center; }
 section h2 { font-size:2rem; margin-bottom:20px; }
 section p { font-size:1.1rem; opacity:0.85; line-height:1.6; margin-bottom:20px; }
-.features { display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:40px; }
-.feature-box { background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; flex:1 1 250px; margin:10px; transition:0.3s; opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
-.feature-box:nth-child(1){ animation-delay:0.3s; }
-.feature-box:nth-child(2){ animation-delay:0.6s; }
-.feature-box:nth-child(3){ animation-delay:0.9s; }
-.feature-box:hover { background:rgba(255,255,255,0.2); transform: translateY(-5px); }
+.features, .testimonials { display:flex; justify-content:space-around; flex-wrap:wrap; margin-top:40px; }
+.feature-box, .testimonial-box { background:rgba(255,255,255,0.1); padding:20px; border-radius:12px; flex:1 1 250px; margin:10px; transition:0.3s; opacity:0; transform: translateY(20px); animation: fadeInUp 1s forwards; }
+.feature-box:hover, .testimonial-box:hover { background:rgba(255,255,255,0.2); transform: translateY(-5px); }
+.feature-box i { font-size:2rem; margin-bottom:10px; color:#ff4b2b; }
+
+/* Join Community Section */
+.join { background:rgba(0,0,0,0.2); padding:60px 20px; border-radius:15px; margin:40px auto; max-width:700px; }
+.join h2 { margin-bottom:20px; }
+.join a { margin-top:20px; display:inline-block; }
+
+/* Footer */
 footer { text-align:center; padding:40px 20px; opacity:0.8; font-size:0.9rem; }
+
 /* Animations */
 @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 @keyframes fadeInUp { from {opacity:0; transform: translateY(20px);} to {opacity:1; transform: translateY(0);} }
-@media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1.1rem;} section h2{font-size:1.6rem;} }
+
+/* Delay for multiple boxes */
+.feature-box:nth-child(1){ animation-delay:0.3s; }
+.feature-box:nth-child(2){ animation-delay:0.6s; }
+.feature-box:nth-child(3){ animation-delay:0.9s; }
+.testimonial-box:nth-child(1){ animation-delay:0.3s; }
+.testimonial-box:nth-child(2){ animation-delay:0.6s; }
+.testimonial-box:nth-child(3){ animation-delay:0.9s; }
+
+/* Responsive */
+@media(max-width:768px){ 
+  header h1{font-size:2.2rem;} 
+  header p{font-size:1.1rem;} 
+  section h2{font-size:1.6rem;} 
+}
 </style>
 </head>
 <body>
 
+<!-- Hero Section -->
 <header>
   <h1>🌟 Welcome to RiseUp AI 🌟</h1>
   <p>Your journey to emotional healing and personal growth starts here. Step by step, every day.</p>
   <a href="#features" class="btn">Explore More</a>
 </header>
 
-<secti
+<!-- Features Section -->
+<section id="features">
+  <h2>Our Key Features</h2>
+  <div class="features">
+    <div class="feature-box">
+      <i class="fas fa-calendar-day"></i>
+      <h3>Daily Action Plans</h3>
+      <p>Step-by-step guidance every day to rebuild your life and stay motivated.</p>
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Daily Plans" style="width:100%; border-radius:8px; margin-top:10px;">
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Skill Learning Paths</h3>
+      <p>Access structured paths to learn valuable skills and earn globally.</p>
+      <img src="https://images.unsplash.com/photo-1581091870622-4b8c0c0b1b1f?auto=format&fit=crop&w=600&q=80" alt="Learning" style="width:100%; border-radius:8px; margin-top:10px;">
+    </div>
+    <div class="feature-box">
+      <i class="fas fa-heart"></i>
+      <h3>Emotional Support</h3>
+      <p>Curated content and exercises to heal emotionally and improve mental strength.</p>
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Support" style="width:100%; border-radius:8px; margin-top:10px;">
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section id="how-it-works">
+  <h2>How It Works</h2>
+  <p>Simple steps to start transforming your life:</p>
+  <div class="features">
+    <div class="feature-box">
+      <h3>1. Explore</h3>
+      <p>Discover daily guides, tips, and support tools.</p>
+    </div>
+    <div class="feature-box">
+      <h3>2. Apply</h3>
+      <p>Follow daily plans and actionable steps to improve yourself.</p>
+    </div>
+    <div class="feature-box">
+      <h3>3. Grow</h3>
+      <p>See real progress, track improvements, and stay motivated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <h2>What Users Say</h2>
+  <div class="testimonials">
+    <div class="testimonial-box">
+      <p>"RiseUp AI helped me regain confidence and start learning new skills every day!"</p>
+      <strong>- Amina, 25</strong>
+    </div>
+    <div class="testimonial-box">
+      <p>"The daily plans are simple but effective. I feel motivated like never before."</p>
+      <strong>- Omar, 30</strong>
+    </div>
+    <div class="testimonial-box">
+      <p>"Finally a platform that actually guides you step by step for personal growth."</p>
+      <strong>- Sarah, 28</strong>
+    </div>
+  </div>
+</section>
+
+<!-- Join Community -->
+<section class="join">
+  <h2>Join Our Global Community</h2>
+  <p>Be part of thousands who are transforming their lives with RiseUp AI.</p>
+  <a href="#" class="btn">Get Started</a>
+</section>
+
+<footer>
+  © 2025 RiseUp AI | Built with ❤️
+</footer>
+
+</body>
+</html>
